@@ -9,24 +9,28 @@ public class Radio {
         return radioStation;
     }
 
-    public void setRadioStation(int radioStation){
-        if(radioStation < 0){
+    public void setRadioStation(int radioStation) {
+        if (radioStation < 0) {
             return;
         }
-        if(radioStation > 9){
+        if (radioStation > 9) {
             return;
         }
         this.radioStation = radioStation;
 
-   }
+    }
 
-   public void nextStation(){
-        int next = radioStation+1;
+    public void nextStation() {
+        int next = radioStation + 1;
         setRadioStation(next);
+        if (next > 9) {
+            setRadioStation(0);
         }
 
+    }
 
-    public int getVolume(){
+
+    public int getVolume() {
         return volume;
     }
 

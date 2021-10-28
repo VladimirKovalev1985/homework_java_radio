@@ -36,5 +36,16 @@ public class RadioTest {
 
     }
 
+    @Test
+    public void shouldSwitchIfStationOverlimit(){
+        Radio rad = new Radio();
+        rad.setRadioStation(9);
+        rad.nextStation();
+        int expected = 0;
+        int actual = rad.getRadioStation();
+        assertEquals(expected, actual);
+
+    }
+
 
 }

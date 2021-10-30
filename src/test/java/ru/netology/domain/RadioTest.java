@@ -69,6 +69,16 @@ public class RadioTest {
     }
 
     @Test
+    public void shouldSwitchStationBorder(){
+        Radio rad = new Radio();
+        rad.setRadioStation(5);
+        rad.prevStation();
+        int expected = 4;
+        int actual = rad.getRadioStation();
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void shouldIndicateTheNumberStation(){
         Radio rad = new Radio();
         rad.setRadioStation(5);

@@ -59,6 +59,16 @@ public class RadioTest {
     }
 
     @Test
+    public void shouldSwitchIfStationUnderLimitBorder(){
+        Radio rad = new Radio();
+        rad.setRadioStation(-1);
+        rad.prevStation();
+        int expected = 9;
+        int actual = rad.getRadioStation();
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void shouldIndicateTheNumberStation(){
         Radio rad = new Radio();
         rad.setRadioStation(5);

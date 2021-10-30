@@ -29,6 +29,20 @@ public class Radio {
 
     }
 
+    public void prevStation(){
+        int prev = radioStation - 1;
+        setRadioStation(prev);
+        if (prev < 0){
+            setRadioStation(9);
+        }
+    }
+
+    public void numberStation(){
+        int numStation = radioStation;
+        setRadioStation(numStation);
+
+    }
+
 
     public int getVolume() {
         return volume;

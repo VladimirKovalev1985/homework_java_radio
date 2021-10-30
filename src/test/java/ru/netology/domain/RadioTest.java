@@ -37,11 +37,33 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldSwitchIfStationOverlimit(){
+    public void shouldSwitchIfStationOverLimit(){
         Radio rad = new Radio();
         rad.setRadioStation(9);
         rad.nextStation();
         int expected = 0;
+        int actual = rad.getRadioStation();
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void shouldSwitchIfStationUnderLimit(){
+        Radio rad = new Radio();
+        rad.setRadioStation(0);
+        rad.prevStation();
+        int expected = 9;
+        int actual = rad.getRadioStation();
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void shouldIndicateTheNumberStation(){
+        Radio rad = new Radio();
+        rad.setRadioStation(5);
+        rad.numberStation();
+        int expected = 5;
         int actual = rad.getRadioStation();
         assertEquals(expected, actual);
 

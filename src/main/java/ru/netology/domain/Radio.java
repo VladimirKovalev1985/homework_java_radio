@@ -48,5 +48,33 @@ public class Radio {
         return volume;
     }
 
+    public void setVolume(int volume){
+        if(volume < 0){
+            return;
+        }
+        if(volume > 10){
+            return;
+        }
+        this.volume = volume;
+    }
+
+    public void plusVolume(){
+        int plus = volume +1;
+        setVolume(plus);
+        if(plus > 10){
+            setVolume(10);
+        }
+    }
+
+    public void minusVolume(){
+        int minus = volume - 1;
+        setVolume(minus);
+        if(minus < 0){
+            setVolume(0);
+        }
+    }
+
+
+
 }
 

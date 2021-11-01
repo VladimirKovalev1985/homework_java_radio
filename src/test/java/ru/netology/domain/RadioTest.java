@@ -89,5 +89,55 @@ public class RadioTest {
 
     }
 
+    @Test
+    public void shouldSetVolume(){
+        Radio rad = new Radio();
+        rad.setVolume(5);
+        int expected = 5;
+        int actual = rad.getVolume();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldSwitchIfVolumeMax(){
+        Radio rad = new Radio();
+        rad.setVolume(10);
+        rad.plusVolume();
+        int expected = 10;
+        int actual = rad.getVolume();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldSwitchIfVolumeMin(){
+        Radio rad = new Radio();
+        rad.setVolume(0);
+        rad.minusVolume();
+        int expected = 0;
+        int actual = rad.getVolume();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldSwitchNormVolume(){
+        Radio rad = new Radio();
+        rad.setVolume(5);
+        rad.plusVolume();
+        int expected = 6;
+        int actual = rad.getVolume();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldSwitchVolumeDown(){
+        Radio rad = new Radio();
+        rad.setVolume(1);
+        rad.minusVolume();
+        int expected = 0;
+        int actual = rad.getVolume();
+        assertEquals(expected, actual);
+    }
 
 }
+
+

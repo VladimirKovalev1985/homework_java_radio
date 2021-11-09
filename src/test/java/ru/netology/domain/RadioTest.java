@@ -5,29 +5,31 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RadioTest {
+    Radio rad = new Radio(9);
+    Radio rad1 = new Radio();
 
     @Test
     public void shouldSetRadioStationNorm(){
-        Radio rad = new Radio();
+
         rad.setRadioStation(1);
-        int expected = 1;
-        int actual = rad.getRadioStation();
-        assertEquals(expected, actual);
+                int actual = rad.getRadioStation();
+        assertEquals(1, actual);
     }
+
 
     @Test
     public void shouldSetRadioStationOver(){
-        Radio rad = new Radio();
+
         rad.setRadioStation(9);
-        int expected = 9;
+
         int actual = rad.getRadioStation();
-        assertEquals(expected, actual);
+        assertEquals(9, actual);
     }
 
 
     @Test
     public void shouldSwitchToNextStation(){
-        Radio rad = new Radio();
+
         rad.setRadioStation(8);
         rad.nextStation();
         int expected = 9;
@@ -38,7 +40,7 @@ public class RadioTest {
 
     @Test
     public void shouldSwitchIfStationOverLimit(){
-        Radio rad = new Radio();
+
         rad.setRadioStation(9);
         rad.nextStation();
         int expected = 0;
@@ -49,7 +51,7 @@ public class RadioTest {
 
     @Test
     public void shouldSwitchIfStationUnderLimit(){
-        Radio rad = new Radio();
+
         rad.setRadioStation(0);
         rad.prevStation();
         int expected = 9;
@@ -60,9 +62,9 @@ public class RadioTest {
 
     @Test
     public void shouldSwitchIfStationUnderLimitBorder(){
-        Radio rad = new Radio();
+
         rad.setRadioStation(-1);
-        rad.prevStation();
+        rad1.prevStation();
         int expected = 9;
         int actual = rad.getRadioStation();
         assertEquals(expected, actual);
@@ -70,7 +72,7 @@ public class RadioTest {
 
     @Test
     public void shouldSwitchStationBorder(){
-        Radio rad = new Radio();
+
         rad.setRadioStation(5);
         rad.prevStation();
         int expected = 4;
@@ -80,7 +82,7 @@ public class RadioTest {
 
     @Test
     public void shouldIndicateTheNumberStation(){
-        Radio rad = new Radio();
+
         rad.setRadioStation(5);
         rad.numberStation();
         int expected = 5;
@@ -91,7 +93,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetVolume(){
-        Radio rad = new Radio();
+
         rad.setVolume(5);
         int expected = 5;
         int actual = rad.getVolume();
@@ -100,17 +102,17 @@ public class RadioTest {
 
     @Test
     public void shouldSwitchIfVolumeMax(){
-        Radio rad = new Radio();
-        rad.setVolume(10);
+
+        rad.setVolume(100);
         rad.plusVolume();
-        int expected = 10;
+
         int actual = rad.getVolume();
-        assertEquals(expected, actual);
+        assertEquals(100, actual);
     }
 
     @Test
     public void shouldSwitchIfVolumeMin(){
-        Radio rad = new Radio();
+
         rad.setVolume(0);
         rad.minusVolume();
         int expected = 0;
@@ -120,7 +122,7 @@ public class RadioTest {
 
     @Test
     public void shouldSwitchNormVolume(){
-        Radio rad = new Radio();
+
         rad.setVolume(5);
         rad.plusVolume();
         int expected = 6;
@@ -130,7 +132,7 @@ public class RadioTest {
 
     @Test
     public void shouldSwitchVolumeDown(){
-        Radio rad = new Radio();
+
         rad.setVolume(1);
         rad.minusVolume();
         int expected = 0;

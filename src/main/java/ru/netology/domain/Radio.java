@@ -2,8 +2,8 @@ package ru.netology.domain;
 
 public class Radio {
 
-    private int radioStation = 9;
-    private int volume = 100;
+    private int radioStation;
+    private int volume;
 
     public Radio(int radioStation) {
         this.radioStation = radioStation;

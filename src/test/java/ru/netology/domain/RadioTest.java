@@ -9,16 +9,16 @@ public class RadioTest {
     Radio rad1 = new Radio();
 
     @Test
-    public void shouldSetRadioStationNorm(){
+    public void shouldSetRadioStationNorm() {
 
         rad.setRadioStation(1);
-                int actual = rad.getRadioStation();
+        int actual = rad.getRadioStation();
         assertEquals(1, actual);
     }
 
 
     @Test
-    public void shouldSetRadioStationOver(){
+    public void shouldSetRadioStationOver() {
 
         rad.setRadioStation(9);
 
@@ -28,7 +28,7 @@ public class RadioTest {
 
 
     @Test
-    public void shouldSwitchToNextStation(){
+    public void shouldSwitchToNextStation() {
 
         rad.setRadioStation(8);
         rad.nextStation();
@@ -39,7 +39,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldSwitchIfStationOverLimit(){
+    public void shouldSwitchIfStationOverLimit() {
 
         rad.setRadioStation(9);
         rad.nextStation();
@@ -50,7 +50,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldSwitchIfStationUnderLimit(){
+    public void shouldSwitchIfStationUnderLimit() {
 
         rad.setRadioStation(0);
         rad.prevStation();
@@ -61,7 +61,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldSwitchIfStationUnderLimitBorder(){
+    public void shouldSwitchIfStationUnderLimitBorder() {
 
         rad.setRadioStation(-1);
         rad.prevStation();
@@ -71,7 +71,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldSwitchStationBorder(){
+    public void shouldSwitchStationBorder() {
 
         rad.setRadioStation(5);
         rad.prevStation();
@@ -81,7 +81,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldIndicateTheNumberStation(){
+    public void shouldIndicateTheNumberStation() {
 
         rad.setRadioStation(5);
         rad.numberStation();
@@ -92,7 +92,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldSetVolume(){
+    public void shouldSetVolume() {
 
         rad.setVolume(5);
         int expected = 5;
@@ -101,7 +101,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldSwitchIfVolumeMax(){
+    public void shouldSwitchIfVolumeMax() {
 
         rad.setVolume(100);
         rad.plusVolume();
@@ -111,7 +111,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldSwitchIfVolumeMin(){
+    public void shouldSwitchIfVolumeMin() {
 
         rad.setVolume(0);
         rad.minusVolume();
@@ -121,7 +121,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldSwitchNormVolume(){
+    public void shouldSwitchNormVolume() {
 
         rad.setVolume(5);
         rad.plusVolume();
@@ -131,7 +131,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldSwitchVolumeDown(){
+    public void shouldSwitchVolumeDown() {
 
         rad.setVolume(1);
         rad.minusVolume();

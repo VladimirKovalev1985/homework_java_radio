@@ -64,7 +64,7 @@ public class RadioTest {
     public void shouldSwitchIfStationUnderLimitBorder(){
 
         rad.setRadioStation(-1);
-        rad1.prevStation();
+        rad.prevStation();
         int expected = 9;
         int actual = rad.getRadioStation();
         assertEquals(expected, actual);

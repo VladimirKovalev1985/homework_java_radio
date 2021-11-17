@@ -6,8 +6,6 @@ public class Radio {
     private int volume;
 
 
-
-
     public Radio(int radioStation) {
         this.radioStation = radioStation;
     }

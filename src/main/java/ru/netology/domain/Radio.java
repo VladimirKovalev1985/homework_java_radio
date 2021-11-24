@@ -4,10 +4,11 @@ public class Radio {
 
     private int radioStation;
     private int volume;
-    private int numberRadioStation = 9;
+    private int maxRadioStation = 9;
+    private int minRadiostation = 0;
 
-    public Radio(int numberRadioStation) {
-        this.numberRadioStation = numberRadioStation;
+    public Radio(int radioStation) {
+        this.radioStation = radioStation;
     }
 
     public Radio() {
@@ -18,10 +19,10 @@ public class Radio {
     }
 
     public void setRadioStation(int radioStation) {
-        if (radioStation < 0) {
+        if (radioStation < minRadiostation) {
             return;
         }
-        if (radioStation > numberRadioStation) {
+        if (radioStation > maxRadioStation) {
             return;
         }
         this.radioStation = radioStation;
@@ -32,8 +33,8 @@ public class Radio {
     public void nextStation() {
         int next = radioStation + 1;
         setRadioStation(next);
-        if (next > numberRadioStation) {
-            setRadioStation(0);
+        if (next > maxRadioStation) {
+            setRadioStation(minRadiostation);
         }
 
     }
@@ -41,8 +42,8 @@ public class Radio {
     public void prevStation() {
         int prev = radioStation - 1;
         setRadioStation(prev);
-        if (prev < 0) {
-            setRadioStation(numberRadioStation);
+        if (prev < minRadiostation) {
+            setRadioStation(maxRadioStation);
         }
     }
 
